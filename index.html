@@ -1,62 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
     <style>
+        /* Estilo geral */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            background-color: #f0f0f0;
         }
+
+        /* Container principal */
         .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 400px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+			text-align:left;
         }
-        .container h2 {
-            font-size: 34px; /* Tamanho dos integrantes */
-            margin-bottom: 20px;
+
+        /* Títulos */
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+			text-align:center;
         }
-        .integrantes {
-            font-size: 24px; /* Aumentado */
-            margin-bottom: 20px;
+
+        h3 {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+			text-align:center;
         }
-        .activity-list a {
+
+        /* Links */
+        a {
             display: block;
-            color: #3498db;
+            font-size: 1.2rem;
+            margin: 10px 0;
             text-decoration: none;
-            margin: 10px 0; /* Aumentado */
-            transition: color 0.3s;
-            font-size: 18px; /* Aumentado */
+            color: #3498db;
+            transition: color 0.3s ease;
         }
-        .activity-list a:hover {
-            text-decoration: underline;
+
+        a:hover {
             color: #2980b9;
         }
-        .footer {
-            font-size: 20px; /* Para o texto do curso */
-        }
-    </style>
+
+        </style>
 </head>
+
 <body>
 
     <div class="container">
-        <h2>Integrantes:</h2>
-        <p class="integrantes">Rarysson, Carlos Augusto, Matheus, Enzo, Vinicius, Marcos, João Glenio, Jefferson, Thyago</p>
-        <div class="activity-list">
-            <a href="atividade01.html">Atividade 01 - Página Dashboard</a>
-            <a href="atividade02.html">Atividade 02 - Aguardando...</a>
-            <a href="atividade03.html">Atividade 03 - Aguardando...</a>
-        </div>
-        <p class="footer">PROGRAMAÇÃO WEB 2024.2</p>
+        <h1>Rarysson, Carlos Augusto, Matheus, Enzo, Vinicius, Marcos, João Glenio, Jefferson, Thyago</h1>
+        <h3>PROGRAMAÇÃO WEB 2024.2</h3>
+
+        <a href="01">Atividade 01 - Página Dashboard </a> <br>
+        <a href="02">Atividade 02 - Aguardando...</a>  <br>
+        <a href="03">Atividade 03 - Aguardando...</a> <br>
     </div>
 
 </body>

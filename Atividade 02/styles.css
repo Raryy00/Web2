@@ -1,0 +1,28 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        background-color: blue;
+    }
+    25% {
+        transform: rotate(90deg);
+        background-color: red;
+    }
+    50% {
+        transform: rotate(180deg);
+        background-color: green;
+    }
+    75% {
+        transform: rotate(270deg);
+        background-color: yellow;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-color: blue;
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    animation: rotate 10s infinite;
+}

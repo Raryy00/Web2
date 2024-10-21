@@ -1,3 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Fundo claro para contraste */
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+.box {
+    width: 150px;
+    height: 150px;
+    animation: rotate 10s infinite;
+}
+
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -19,10 +42,4 @@
         transform: rotate(360deg);
         background-color: blue;
     }
-}
-
-.box {
-    width: 100px;
-    height: 100px;
-    animation: rotate 10s infinite;
 }

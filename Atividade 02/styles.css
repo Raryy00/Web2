@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box; /* Para garantir que padding e border não afetem as dimensões */
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -12,14 +16,15 @@ body {
 }
 
 .title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin-bottom: 20px; /* Espaço entre o título e o quadrado */
 }
 
 .box {
-    width: 200px;
-    height: 200px;
+    width: 300px; /* Aumentando o tamanho do quadrado */
+    height: 300px; /* Aumentando o tamanho do quadrado */
     animation: rotate 10s infinite;
+    margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 @keyframes rotate {

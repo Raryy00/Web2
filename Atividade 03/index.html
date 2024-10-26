@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto com Bootstrap</title>
+    <!-- Link para o Bootstrap via CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <!-- Botões coloridos -->
+        <h2>Botões Coloridos</h2>
+        <button class="btn btn-primary">Primário</button>
+        <button class="btn btn-secondary">Secundário</button>
+        <button class="btn btn-success">Sucesso</button>
+        <button class="btn btn-danger">Perigo</button>
+        <button class="btn btn-warning">Aviso</button>
+        <button class="btn btn-info">Informativo</button>
+        <button class="btn btn-light">Claro</button>
+        <button class="btn btn-dark">Escuro</button>
+    </div>
+
+    <!-- Janela Modal -->
+    <div class="container text-center mt-5">
+        <h2>Exemplo de Modal</h2>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal">Abrir Modal</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Conteúdo do modal.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela -->
+    <div class="container text-center mt-5">
+        <h2>Exemplo de Tabela</h2>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João</td>
+                    <td>joao@email.com</td>
+                    <td>(99) 99999-9999</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>maria@email.com</td>
+                    <td>(88) 88888-8888</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+  </html>

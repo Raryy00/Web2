@@ -18,7 +18,6 @@
     gap: 10px;
     grid-template-columns: repeat(12, 1fr); /* Colunas ajustadas para 12 */
     grid-template-rows: repeat(12, auto);    /* Linhas com altura automática */
-    max-width: 1200px; /* Aumentei a largura máxima para 1200px */
   }
   
   .gallery-container .item {

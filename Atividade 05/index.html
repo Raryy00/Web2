@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<HTML lang="PT-BR">
+
+    <head>
+        <title>Javascript</title>
+        <script>
+            function mostrarAlerta() {
+                alert('Esta é uma menssagem de alerta!!!');
+        }
+            function mostrarMensagem(mensagem) {
+                alert('Mensagem: ' + mensagem);
+        }
+            function somarValores(valor1,valor2){
+                var soma = valor1 + valor2;
+
+                alert('A soma é: '+ soma);
+        }
+            function escreveTexto(){
+                document.getElementById("texto").innerText ="Este é o novo texto escrito pela função";
+        }
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+        <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+        <button onclick="mostrarMensagem('Esta é uma mensagems passada com argumento!')">Mostrar Mensagem com Argumento</button>
+        <button onclick="somarValores(5, 10)">Somar 5 + 10</button>
+        <div id="texto" style="margin-top: 20px; font-weight: bold;"></div>
+        <button onclick="escreveTexto()">Escrever Texto na Página</button>        
+    </body>
+</HTML>

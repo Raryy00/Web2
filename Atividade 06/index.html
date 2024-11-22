@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplos Combinados</title>
-    <script src="script.js" defer></script>
+    <title>Calculadora de Raiz Quadrada e Escrita em Div</title>
+    <style>
+        button {
+            display: block;
+            margin: 10px 0;
+        }
+        hr {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Exemplos Combinados</h1>
-    
-    <h2>Contador de Números</h2>
-    <button onclick="contarNumeros()">Contar</button>
-    <div id="numeros"></div>
-    
-    <h2>Calcular Raízes Quadradas</h2>
-    <button onclick="calcularRaizes()">Calcular Raízes</button>
-    <div id="raizes"></div>
-    
-    <h2>Escrever em uma Div</h2>
-    <button onclick="escreverNaDiv()">Escrever</button>
+    <h1>Calculadora de Raiz Quadrada</h1>
+    <button onclick="calcularRaiz(25)">Raiz de 25</button>
+    <button onclick="calcularRaiz(36)">Raiz de 36</button>
+    <button onclick="calcularRaiz(49)">Raiz de 49</button>
+    <p id="resultado"></p>
+    <hr>
+
+    <h1>Escrevendo em uma Div</h1>
     <div id="minhaDiv"></div>
-    
-    <h2>Texto Dinâmico</h2>
-    <input type="text" id="textoUsuario" placeholder="Digite seu texto aqui">
-    <button onclick="exibirTexto()">Exibir Texto</button>
-    <div id="resultado"></div>
+    <button onclick="escreverNaDiv()">Clique para escrever</button>
+    <hr>
+
+    <h1>Receber Texto do Usuário</h1>
+    <input type="text" id="textoUsuario" placeholder="Digite algo">
+    <button onclick="receberTexto()">Enviar</button>
+    <p id="textoResultado"></p>
+
+    <script src="script.js"></script>
 </body>
 </html>

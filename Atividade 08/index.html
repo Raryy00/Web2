@@ -7,20 +7,68 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Manipulação de Arrays</h1>
+  <h1>Array de Linguagens</h1>
   
-  <!-- Botão para mostrar os elementos do array -->
-  <button onclick="mostrarElementos()">Mostrar Elementos</button>
-  <div id="resultado"></div>
+  <button onclick="mostrarListaLinguagens()">Criar Array</button> <br><br>
+ 
+  <button onclick="posicaoLinguagens()">Posição no Array</button>
   
-  <!-- Botão para consultar uma posição específica -->
-  <button onclick="consultarPosicao(2)">Consultar Posição 2</button>
-  
-  <!-- Botões para manipulação adicional -->
-  <button onclick="adicionarFruta('Manga')">Adicionar Manga</button>
-  <button onclick="removerFruta('Uva')">Remover Uva</button>
+  <div id="minhaDiv"></div>
 
-  <!-- Div para o desafio -->
-  <div id="desafio"></div>
+  <hr style="border: 1px solid black;">
+
+  <h1>Array de Frutas</h1>
+  
+  <button onclick="mostrarListaFrutas()">Criar Array</button> <br><br>
+ 
+  <button onclick="posicaoFrutas()">Posição no Array</button>
+  
+  <div id="minhaDivFrutas"></div>
 </body>
+  
+<script>
+  let linguagens = [];
+  linguagens[0] = 'Dart';
+  linguagens[1] = 'PHP';
+  linguagens[2] = 'Java';
+  linguagens[3] = 'Python';
+  linguagens[4] = 'Perl';
+  linguagens[5] = 'Ruby on Rails';
+  linguagens[6] = 'C++';
+
+  function mostrarListaLinguagens() {
+    const container = document.getElementById("minhaDiv");
+    for (var i = 0; i < linguagens.length; i++) {
+      var tag = '<h5>' + i + ' _ ' + linguagens[i] + '</h5>';
+      container.innerHTML += tag;
+    }
+  }
+
+  function posicaoLinguagens() {
+    var indice = prompt('Qual posição da lista deseja consultar?');
+    alert(linguagens[indice]);
+  }
+
+  let frutas = [];
+  frutas[0] = 'Maçã';
+  frutas[1] = 'Banana';
+  frutas[2] = 'Laranja';
+  frutas[3] = 'Manga';
+  frutas[4] = 'Uva';
+  frutas[5] = 'Abacaxi';
+  frutas[6] = 'Morango';
+
+  function mostrarListaFrutas() {
+    const container = document.getElementById("minhaDivFrutas");
+    for (var i = 0; i < frutas.length; i++) {
+      var tag = '<h5>' + i + ' _ ' + frutas[i] + '</h5>';
+      container.innerHTML += tag;
+    }
+  }
+
+  function posicaoFrutas() {
+    var indice = prompt('Qual posição da lista deseja consultar?');
+    alert(frutas[indice]);
+  }
+</script>
 </html>

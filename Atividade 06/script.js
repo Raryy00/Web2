@@ -5,7 +5,7 @@ function calcularRaiz(numero) {
 
 function escreverNaDiv() {
     const div = document.getElementById('minhaDiv');
-    div.innerText = 'Escrevendo em um elemento Click to edit Master title style div';
+    div.innerText = 'Escrevendo em um elemento div';
 }
 
 function receberTexto() {

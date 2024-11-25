@@ -10,8 +10,8 @@
   <h1>Array de Linguagens</h1>
   
   <button onclick="mostrarListaLinguagens()">Criar Array</button> <br><br>
- 
-  <button onclick="posicaoLinguagens()">Posição no Array</button>
+  <button onclick="posicaoLinguagens()">Posição no Array</button> <br><br>
+  <button onclick="limparListaLinguagens()">Limpar Lista</button>
   
   <div id="minhaDiv"></div>
 
@@ -20,8 +20,8 @@
   <h1>Array de Frutas</h1>
   
   <button onclick="mostrarListaFrutas()">Criar Array</button> <br><br>
- 
-  <button onclick="posicaoFrutas()">Posição no Array</button>
+  <button onclick="posicaoFrutas()">Posição no Array</button> <br><br>
+  <button onclick="limparListaFrutas()">Limpar Lista</button>
   
   <div id="minhaDivFrutas"></div>
 </body>
@@ -38,6 +38,7 @@
 
   function mostrarListaLinguagens() {
     const container = document.getElementById("minhaDiv");
+    container.innerHTML = ''; // Limpa o conteúdo antes de adicionar novos elementos
     for (var i = 0; i < linguagens.length; i++) {
       var tag = '<h5>' + i + ' _ ' + linguagens[i] + '</h5>';
       container.innerHTML += tag;
@@ -45,8 +46,16 @@
   }
 
   function posicaoLinguagens() {
-    var indice = prompt('Qual posição da lista deseja consultar?');
+    var indice;
+    do {
+      indice = prompt('Qual posição da lista deseja consultar? (0 a 6)');
+    } while (indice < 0 || indice > 6 || isNaN(indice));
     alert(linguagens[indice]);
+  }
+
+  function limparListaLinguagens() {
+    const container = document.getElementById("minhaDiv");
+    container.innerHTML = '';
   }
 
   let frutas = [];
@@ -60,6 +69,7 @@
 
   function mostrarListaFrutas() {
     const container = document.getElementById("minhaDivFrutas");
+    container.innerHTML = ''; // Limpa o conteúdo antes de adicionar novos elementos
     for (var i = 0; i < frutas.length; i++) {
       var tag = '<h5>' + i + ' _ ' + frutas[i] + '</h5>';
       container.innerHTML += tag;
@@ -67,8 +77,16 @@
   }
 
   function posicaoFrutas() {
-    var indice = prompt('Qual posição da lista deseja consultar?');
+    var indice;
+    do {
+      indice = prompt('Qual posição da lista deseja consultar? (0 a 6)');
+    } while (indice < 0 || indice > 6 || isNaN(indice));
     alert(frutas[indice]);
+  }
+
+  function limparListaFrutas() {
+    const container = document.getElementById("minhaDivFrutas");
+    container.innerHTML = '';
   }
 </script>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pessoas</title>
+</head>
+<body>
+    <h1>Lista de Pessoas</h1>
+    <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
+    <button onclick="removerPessoa()">Remover Pessoa</button>
+    <button onclick="limparLista()">Limpar Lista</button>
+    <ul id="listaPessoas"></ul>
+
+    <script>
+        let pilhaPessoas = [];
+
+        function adicionarPessoa() {
+            let nome = prompt("Digite o nome da pessoa:");
+            if (nome) {
+                pilhaPessoas.push(nome);
+                atualizarLista();
+            }
+        }
+
+        function removerPessoa() {
+            if (pilhaPessoas.length > 0) {
+                let pessoaRemovida = pilhaPessoas.pop();
+                alert("Pessoa removida: " + pessoaRemovida);
+                atualizarLista();
+            } else {
+                alert("A lista está vazia!");
+            }
+        }
+
+        function limparLista() {
+            pilhaPessoas = [];
+            atualizarLista();
+        }
+
+        function atualizarLista() {
+            let lista = document.getElementById("listaPessoas");
+            lista.innerHTML = "";
+            for (let pessoa of pilhaPessoas) {
+                let item = document.createElement("li");
+                item.textContent = pessoa;
+                lista.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>

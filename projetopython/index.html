@@ -47,7 +47,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-bottom: 20px;
             transition: background-color 0.3s;
         }
         .download-btn:hover {
@@ -61,7 +61,7 @@
         }
         .logo {
             width: 100%;
-            max-width: 300px;
+            max-width: 500px; /* Aumenta o tamanho máximo da imagem */
             height: auto;
             border: 2px solid #333;
             border-radius: 10px;
@@ -77,12 +77,12 @@
     <!-- Conteiner principal -->
     <div class="container">
         <h1>Baixe o Arquivo Aqui!</h1>
+        <!-- Botão de download -->
+        <a href="teste01.py" class="download-btn" download>Baixar Arquivo</a>
         <!-- Conteiner da logo -->
         <div class="logo-container">
             <img src="django.png" alt="Logo Django" class="logo">
-        </div>
-        <!-- Botão de download -->
-        <a href="teste01.py" class="download-btn" download>Baixar Arquivo</a>      
+        </div>      
     </div>
 </body>
 </html>

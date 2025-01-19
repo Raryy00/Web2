@@ -7,15 +7,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            color: #333;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
         }
         .container {
             padding: 50px;
             max-width: 800px;
             margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
         }
         h1 {
             color: #333;
@@ -39,24 +53,36 @@
         .download-btn:hover {
             background-color: #45a049;
         }
-        .logo {
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 30px;
+        }
+        .logo {
             width: 100%;
-            max-width:1000px;
+            max-width: 300px;
             height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Baixe o Arquivo Aqui!</h1>
-        <a href="teste01.py" class="download-btn" download>Baixar Arquivo</a>
-        
-        <div class="logo-container">
-            <img src="django.png" alt="Logo Django" class="logo">
-        </div>      
+    <!-- Barra de navegação -->
+    <div class="navbar">
+        <h1>Download de Arquivo</h1>
     </div>
 
+    <!-- Conteiner principal -->
+    <div class="container">
+        <h1>Baixe o Arquivo Aqui!</h1>
+        <!-- Conteiner da logo -->
+        <div class="logo-container">
+            <img src="django.png" alt="Logo Django" class="logo">
+        </div>
+        <!-- Botão de download -->
+        <a href="teste01.py" class="download-btn" download>Baixar Arquivo</a>      
+    </div>
 </body>
 </html>

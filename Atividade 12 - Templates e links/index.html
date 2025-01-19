@@ -3,19 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Download de Arquivo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            color: #333;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
         }
         .container {
             padding: 50px;
             max-width: 800px;
             margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
         .download-btn {
             background-color: #4CAF50;
@@ -28,25 +47,42 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-bottom: 20px;
             transition: background-color 0.3s;
         }
         .download-btn:hover {
             background-color: #45a049;
         }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
         .logo {
-            margin: 30px 0;
             width: 100%;
-            max-width: 400px;
+            max-width: 1000px; /* Aumenta o tamanho máximo da imagem */
             height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
+    <!-- Barra de navegação -->
+    <div class="navbar">
+        <h1>Download de Arquivo</h1>
+    </div>
+
+    <!-- Conteiner principal -->
     <div class="container">
-        <h1>Baixe o Arquivo views.py Aqui!</h1>
-        <img src="{% static 'Index.png' %}" alt="Imagem Index" class="logo">
-        <a href="views.py" class="download-btn" download>Baixar views.py</a>
+        <h1>Baixe o Arquivo Aqui!</h1>
+        <!-- Botão de download -->
+        <a href="views.py" class="download-btn" download>Baixar Arquivo</a>
+        <!-- Conteiner da logo -->
+        <div class="logo-container">
+            <img src="Index.png" alt="Logo Django" class="logo">
+        </div>      
     </div>
 </body>
 </html>

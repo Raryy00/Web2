@@ -58,6 +58,39 @@
         a:hover {
             color: #2980b9;
         }
+
+        /* Estilo para as abas */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo para conteúdo das abas */
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -66,19 +99,44 @@
         <h1>| Rarysson | Guto | Thyago | Enzo | Vinicius |</h1>
         <h3>PROGRAMAÇÃO WEB 2024.2</h3>
 
-        <a href="Atividade 01/index.html">Atividade 01 - Página Dashboard</a>
-        <a href="Atividade 02/index.html">Atividade 02 - Animação e Transição</a>
-        <a href="Atividade 03/index.html">Atividade 03 - Bootstrap</a>
-        <a href="Atividade 04/index.html">Atividade 04 - Sistema de Grid - Galeria de Imagens</a>
-        <a href="Atividade 05/index.html">Atividade 05 - Introdução a JavaScript</a>
-        <a href="Atividade 06/index.html">Atividade 06 - Exercícios JavaScript 02</a>
-        <a href="Atividade 07/index.html">Atividade 07 - Desafio JavaScript 01</a>
-        <a href="Atividade 08/index.html">Atividade 08 - JavaScript - Arrays 01</a>
-        <a href="Atividade 09/index.html">Atividade 09 - Push e POP</a>
-        <a href="projetopython/index.html">Atividade 10 - Introdução ao Python</a>
-        <a href="Atividade 11 – Views e Rotas/index.html">Atividade 11 – Views e Rotas</a>
-        <a href="Atividade 12 - Templates e links/index.html">Atividade 12 - Templates e links</a>
+        <!-- Abas -->
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('atividade-aba1')">Atividades 1 a 12</button>
+            <button class="tab-button" onclick="openTab('atividade-aba2')">Atividade 13</button>
+        </div>
+
+        <!-- Conteúdo da primeira aba -->
+        <div id="atividade-aba1" class="tab-content active">
+            <a href="Atividade 01/index.html">Atividade 01 - Página Dashboard</a>
+            <a href="Atividade 02/index.html">Atividade 02 - Animação e Transição</a>
+            <a href="Atividade 03/index.html">Atividade 03 - Bootstrap</a>
+            <a href="Atividade 04/index.html">Atividade 04 - Sistema de Grid - Galeria de Imagens</a>
+            <a href="Atividade 05/index.html">Atividade 05 - Introdução a JavaScript</a>
+            <a href="Atividade 06/index.html">Atividade 06 - Exercícios JavaScript 02</a>
+            <a href="Atividade 07/index.html">Atividade 07 - Desafio JavaScript 01</a>
+            <a href="Atividade 08/index.html">Atividade 08 - JavaScript - Arrays 01</a>
+            <a href="Atividade 09/index.html">Atividade 09 - Push e POP</a>
+            <a href="projetopython/index.html">Atividade 10 - Introdução ao Python</a>
+            <a href="Atividade 11 – Views e Rotas/index.html">Atividade 11 – Views e Rotas</a>
+            <a href="Atividade 12 - Templates e links/index.html">Atividade 12 - Templates e links</a>
+        </div>
+
+        <!-- Conteúdo da segunda aba (Atividade 13) -->
+        <div id="atividade-aba2" class="tab-content">
+            <a href="Atividade 13/index.html">Atividade 13 - Projeto Vercel</a>
+        </div>
     </div>
+
+    <script>
+        function openTab(tabId) {
+            // Esconde todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Mostra o conteúdo da aba ativa
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </body>
 
 </html>

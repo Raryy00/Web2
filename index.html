@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividades</title>
+    <title>Atividades - Programação Web 2024.2</title>
     <style>
         /* Estilo geral */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #f4f4f9;
         }
 
         /* Container principal */
         .container {
-            text-align: center;
             background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 700px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
             text-align: left;
         }
 
         /* Títulos */
         h1 {
             font-size: 2rem;
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 0.5rem;
             text-align: center;
         }
 
         h3 {
-            font-size: 1.5rem;
-            color: #666;
-            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
         /* Links */
         a {
             display: block;
-            font-size: 1.2rem;
-            margin: 10px 0;
+            font-size: 1.1rem;
+            margin: 8px 0;
+            padding: 8px;
             text-decoration: none;
             color: #3498db;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease, background-color 0.2s ease;
+            border-radius: 4px;
         }
 
         a:hover {
-            color: #2980b9;
+            color: #ffffff;
+            background-color: #3498db;
         }
 
         /* Estilo para as abas */
         .tabs {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
@@ -73,13 +76,22 @@
             color: white;
             border: none;
             font-size: 1rem;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
         }
 
         .tab-button:hover {
             background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .tab-button.active {
+            background-color: #2c3e50;
+        }
+
+        .tab-button:focus {
+            outline: 2px solid #2980b9;
+            outline-offset: 2px;
         }
 
         /* Estilo para conteúdo das abas */
@@ -91,46 +103,75 @@
         .tab-content.active {
             display: block;
         }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .tab-button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>| Rarysson | Guto | Thyago | Enzo | Vinicius |</h1>
-        <h3>PROGRAMAÇÃO WEB 2024.2</h3>
+        <h1>Rarysson | Guto | Thyago | Enzo | Vinicius</h1>
+        <h3>Programação Web 2024.2</h3>
         
-        <div class="tabs">
-            <button class="tab-button" onclick="openTab('atividade-aba1')">Página 1</button>
-            <button class="tab-button" onclick="openTab('atividade-aba2')">Página 2</button>
-        </div>
+        <nav class="tabs" role="tablist">
+            <button class="tab-button active" role="tab" aria-selected="true" aria-controls="atividade-aba1" onclick="openTab('atividade-aba1', this)">Página 1</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="atividade-aba2" onclick="openTab('atividade-aba2', this)">Página 2</button>
+        </nav>
 
-        <div id="atividade-aba1" class="tab-content active">
-            <a href="Atividade 01/index.html">Atividade 01 - Página Dashboard</a>
-            <a href="Atividade 02/index.html">Atividade 02 - Animação e Transição</a>
-            <a href="Atividade 03/index.html">Atividade 03 - Bootstrap</a>
-            <a href="Atividade 04/index.html">Atividade 04 - Sistema de Grid - Galeria de Imagens</a>
-            <a href="Atividade 05/index.html">Atividade 05 - Introdução a JavaScript</a>
-            <a href="Atividade 06/index.html">Atividade 06 - Exercícios JavaScript 02</a>
-            <a href="Atividade 07/index.html">Atividade 07 - Desafio JavaScript 01</a>
-        </div>
-        <div id="atividade-aba2" class="tab-content">
-            <a href="Atividade 08/index.html">Atividade 08 - JavaScript - Arrays 01</a>
-            <a href="Atividade 09/index.html">Atividade 09 - Push e POP</a>
-            <a href="projetopython/index.html">Atividade 10 - Introdução ao Python</a>
-            <a href="Atividade 11 – Views e Rotas/index.html">Atividade 11 – Views e Rotas</a>
-            <a href="Atividade 12 - Templates e links/index.html">Atividade 12 - Templates e links</a>
+        <section id="atividade-aba1" class="tab-content active" role="tabpanel">
+            <a href="Atividade-01/index.html">Atividade 01 - Página Dashboard</a>
+            <a href="Atividade-02/index.html">Atividade 02 - Animação e Transição</a>
+            <a href="Atividade-03/index.html">Atividade 03 - Bootstrap</a>
+            <a href="Atividade-04/index.html">Atividade 04 - Sistema de Grid (Galeria de Imagens)</a>
+            <a href="Atividade-05/index.html">Atividade 05 - Introdução a JavaScript</a>
+            <a href="Atividade-06/index.html">Atividade 06 - Exercícios JavaScript 02</a>
+            <a href="Atividade-07/index.html">Atividade 07 - Desafio JavaScript 01</a>
+        </section>
+        <section id="atividade-aba2" class="tab-content" role="tabpanel">
+            <a href="Atividade-08/index.html">Atividade 08 - JavaScript: Arrays 01</a>
+            <a href="Atividade-09/index.html">Atividade 09 - JavaScript: Push e Pop</a>
+            <a href="Atividade-10/index.html">Atividade 10 - Introdução ao Python</a>
+            <a href="Atividade-11/index.html">Atividade 11 - Views e Rotas</a>
+            <a href="Atividade-12/index.html">Atividade 12 - Templates e Links</a>
             <a href="https://pilotoof.vercel.app" target="_blank">Atividade 13 - Projeto Vercel</a>
-        </div>
+        </section>
     </div>
 
     <script>
-        function openTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+        function openTab(tabId, button) {
+            // Remove active class from all tab contents and buttons
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
 
+            // Add active class to selected tab content and button
             document.getElementById(tabId).classList.add('active');
+            button.classList.add('active');
+            button.setAttribute('aria-selected', 'true');
         }
     </script>
 </body>
-
 </html>

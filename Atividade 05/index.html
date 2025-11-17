@@ -3,46 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atividade 5 - JavaScript</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Atividade 5 - JavaScript Avançado</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
     }
 
     h1 {
       color: #2c3e50;
-      margin-bottom: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
     button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
       background-color: #3498db;
       color: white;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      border: none;
     }
 
     button:hover {
@@ -50,21 +38,26 @@
     }
 
     #texto {
-      margin-top: 20px;
-      font-weight: 600;
-      color: #2c3e50;
+      margin-top: 10px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🧠 Atividade 5 - JavaScript</h1>
-    <button onclick="mostrarAlerta()">Mostrar Alerta</button>
-    <button onclick="mostrarMensagem('Esta é uma mensagem passada com argumento!')">Mostrar Mensagem com Argumento</button>
-    <button onclick="somarValores(5, 10)">Somar 5 + 10</button>
-    <button onclick="escreveTexto()">Escrever Texto na Página</button>
-    <div id="texto"></div>
-  </div>
+  <h1>🧠 Atividade 5 - JavaScript</h1>
+
+  <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+  <button onclick="mostrarMensagem('Mensagem com argumento!')">Mostrar Mensagem com Argumento</button>
+
+  <input type="number" id="valor1" placeholder="Valor 1">
+  <input type="number" id="valor2" placeholder="Valor 2">
+  <button onclick="somarValoresPersonalizados()">Somar Valores Digitados</button>
+
+  <button onclick="escreveTexto()">Escrever Texto na Página</button>
+  <button onclick="limparTexto()">Limpar Texto</button>
+  <button onclick="excluirAlerta()">Excluir Alerta (Simulado)</button>
+
+  <div id="texto"></div>
 
   <script>
     function mostrarAlerta() {
@@ -75,13 +68,26 @@
       alert('Mensagem: ' + mensagem);
     }
 
-    function somarValores(valor1, valor2) {
-      const soma = valor1 + valor2;
-      alert('A soma é: ' + soma);
+    function somarValoresPersonalizados() {
+      const v1 = parseFloat(document.getElementById("valor1").value);
+      const v2 = parseFloat(document.getElementById("valor2").value);
+      if (isNaN(v1) || isNaN(v2)) {
+        alert("Digite dois números válidos.");
+        return;
+      }
+      alert("A soma é: " + (v1 + v2));
     }
 
     function escreveTexto() {
-      document.getElementById("texto").innerText = "Este é o novo texto escrito pela função.";
+      document.getElementById("texto").innerText = "Texto gerado pela função.";
+    }
+
+    function limparTexto() {
+      document.getElementById("texto").innerText = "";
+    }
+
+    function excluirAlerta() {
+      document.getElementById("texto").innerText = "Alerta excluído com sucesso!";
     }
   </script>
 </body>

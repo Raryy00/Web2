@@ -3,78 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atividade 6 - JavaScript Separado</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Atividade 6 - JavaScript Interativo</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f0f2f5;
       padding: 40px;
       max-width: 600px;
       margin: auto;
     }
 
-    h1 {
-      color: #2c3e50;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    section {
-      margin-bottom: 30px;
-    }
-
-    button {
-      padding: 10px 16px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 6px;
-      background-color: #3498db;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-
-    input {
+    input, button {
       padding: 10px;
+      margin: 10px 0;
       width: 100%;
-      margin-top: 10px;
+      font-size: 1rem;
       border-radius: 6px;
       border: 1px solid #ccc;
     }
 
-    p, div {
-      margin-top: 10px;
-      font-weight: 500;
+    button {
+      background-color: #2ecc71;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #27ae60;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      background: #fff;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .item button {
+      background-color: #e74c3c;
+      padding: 5px 10px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <section>
-    <h1>🔢 Raiz Quadrada</h1>
-    <button onclick="calcularRaiz(25)">Raiz de 25</button>
-    <button onclick="calcularRaiz(36)">Raiz de 36</button>
-    <button onclick="calcularRaiz(49)">Raiz de 49</button>
-    <p id="resultado"></p>
-  </section>
+  <h1>🔢 Raiz Quadrada Personalizada</h1>
+  <input type="number" id="numeroRaiz" placeholder="Digite um número">
+  <button onclick="calcularRaiz()">Calcular Raiz</button>
+  <p id="resultado"></p>
 
-  <section>
-    <h1>📝 Escrever em uma Div</h1>
-    <div id="minhaDiv"></div>
-    <button onclick="escreverNaDiv()">Escrever</button>
-  </section>
+  <hr>
 
-  <section>
-    <h1>💬 Receber Texto</h1>
-    <input type="text" id="textoUsuario" placeholder="Digite algo">
-    <button onclick="receberTexto()">Enviar</button>
-    <p id="textoResultado"></p>
-  </section>
+  <h1>📝 Escrever e Excluir Texto</h1>
+  <div id="minhaDiv"></div>
+  <button onclick="escreverNaDiv()">Escrever</button>
+  <button onclick="excluirDiv()">Excluir Texto</button>
 
-  <script src="script.js"></script>
+  <hr>
+
+  <h1>💬 Lista de Textos Digitados</h1>
+  <input type="text" id="textoUsuario" placeholder="Digite algo">
+  <button onclick="adicionarTexto()">Adicionar</button>
+  <div id="listaTextos"></div>
+
+  <script>
+    function calcularRaiz() {
+      const numero = parseFloat(document.getElementById("numeroRaiz").value);
+      if (isNaN(numero)) {
+        document.getElementById("resultado").innerText = "Digite um número válido.";
+        return;
+      }
+      const raiz = Math.sqrt(numero);
+      document.getElementById("resultado").innerText = `A raiz quadrada de ${numero} é ${raiz}`;
+    }
+
+    function escreverNaDiv() {
+      document.getElementById("minhaDiv").innerText = "Texto gerado pela função.";
+    }
+
+    function excluirDiv() {
+      document.getElementById("minhaDiv").innerText = "";
+    }
+
+    function adicionarTexto() {
+      const texto = document.getElementById("textoUsuario").value;
+      if (!texto) return;
+
+      const container = document.getElementById("listaTextos");
+      const item = document.createElement("div");
+      item.className = "item";
+      item.innerHTML = `<span>${texto}</span><button onclick="this.parentElement.remove()">Excluir</button>`;
+      container.appendChild(item);
+
+      document.getElementById("textoUsuario").value = "";
+    }
+  </script>
 </body>
 </html>

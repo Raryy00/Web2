@@ -1,52 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Pessoas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade 9 - Lista de Pessoas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color: #ecf0f1;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Lista de Pessoas</h1>
-    <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
-    <button onclick="removerPessoa()">Remover Pessoa</button>
-    <button onclick="limparLista()">Limpar Lista</button>
-    <ul id="listaPessoas"></ul>
+  <h1>📋 Lista de Pessoas</h1>
 
-    <script>
-        let pilhaPessoas = [];
+  <input type="text" id="nomePessoa" placeholder="Digite o nome da pessoa" />
+  <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
 
-        function adicionarPessoa() {
-            let nome = prompt("Digite o nome da pessoa:");
-            if (nome) {
-                pilhaPessoas.push(nome);
-                atualizarLista();
-            }
-        }
+  <button onclick="removerPessoa()">Remover Última Pessoa</button>
+  <input type="text" id="nomeRemover" placeholder="Remover pessoa por nome" />
+  <button onclick="removerPorNome()">Remover por Nome</button>
 
-        function removerPessoa() {
-            if (pilhaPessoas.length > 0) {
-                let pessoaRemovida = pilhaPessoas.pop();
-                alert("Pessoa removida: " + pessoaRemovida);
-                atualizarLista();
-            } else {
-                alert("A lista está vazia!");
-            }
-        }
+  <button onclick="limparLista()">Limpar Lista</button>
 
-        function limparLista() {
-            pilhaPessoas = [];
-            atualizarLista();
-        }
+  <p id="mensagemErro" class="error"></p>
+  <ul id="listaPessoas"></ul>
 
-        function atualizarLista() {
-            let lista = document.getElementById("listaPessoas");
-            lista.innerHTML = "";
-            for (let pessoa of pilhaPessoas) {
-                let item = document.createElement("li");
-                item.textContent = pessoa;
-                lista.appendChild(item);
-            }
-        }
-    </script>
+  <script>
+    let pilhaPessoas = [];
+
+    function adicionarPessoa() {
+      const nome = document.getElementById("nomePessoa").value.trim();
+      const erro = document.getElementById("mensagemErro");
+      erro.innerText = "";
+
+      if (nome) {
+        pilhaPessoas.push(nome);
+        document.getElementById("nomePessoa").value = "";
+        atualizarLista();
+      } else {
+        erro.innerText = "Digite um nome válido.";
+      }
+    }
+
+    function removerPessoa() {
+      const erro = document.getElementById("mensagemErro");
+      erro.innerText = "";
+
+      if (pilhaPessoas.length > 0) {
+        const removida = pilhaPessoas.pop();
+        alert("Pessoa removida: " + removida);
+        atualizarLista();
+      } else {
+        erro.innerText = "A lista já está vazia.";
+      }
+    }
+
+    function removerPorNome() {
+      const nome = document.getElementById("nomeRemover").value.trim();
+      const erro = document.getElementById("mensagemErro");
+      erro.innerText = "";
+
+      const index = pilhaPessoas.lastIndexOf(nome);
+      if (index !== -1) {
+        pilhaPessoas.splice(index, 1);
+        atualizarLista();
+        document.getElementById("nomeRemover").value = "";
+      } else {
+        erro.innerText = "Nome não encontrado na lista.";
+      }
+    }
+
+    function limparLista() {
+      pilhaPessoas = [];
+      atualizarLista();
+      document.getElementById("mensagemErro").innerText = "";
+    }
+
+    function atualizarLista() {
+      const lista = document.getElementById("listaPessoas");
+      lista.innerHTML = "";
+      for (let pessoa of pilhaPessoas) {
+        const item = document.createElement("li");
+        item.textContent = pessoa;
+        lista.appendChild(item);
+      }
+    }
+  </script>
 </body>
 </html>

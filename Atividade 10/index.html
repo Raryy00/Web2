@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade 10 - Introdução ao Python</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐍 Atividade 10 - Introdução ao Python</h1>
+
+  <button onclick="mostrarVariaveis()">Mostrar Variáveis</button>
+  <button onclick="mostrarLista()">Mostrar Lista</button>
+  <button onclick="executarFuncao()">Executar Função</button>
+
+  <div id="output" class="output"></div>
+
+  <script>
+    function mostrarVariaveis() {
+      let nome = "Python";
+      let versao = 3.12;
+      let tipagem = "Dinâmica";
+      document.getElementById("output").innerHTML =
+        `Linguagem: ${nome}<br>Versão: ${versao}<br>Tipagem: ${tipagem}`;
+    }
+
+    function mostrarLista() {
+      let linguagens = ["Python", "JavaScript", "C#", "Java", "Go"];
+      let listaFormatada = linguagens.map((lang, i) => `${i + 1}. ${lang}`).join("<br>");
+      document.getElementById("output").innerHTML = `Lista de Linguagens:<br>${listaFormatada}`;
+    }
+
+    function executarFuncao() {
+      function saudacao(nome) {
+        return `Olá, ${nome}! Bem-vindo ao mundo Python.`;
+      }
+      let resultado = saudacao("Suporte");
+      document.getElementById("output").innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>

@@ -1,31 +1,88 @@
 <!DOCTYPE html>
-<HTML lang="PT-BR">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade 5 - JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-    <head>
-        <title>Javascript</title>
-        <script>
-            function mostrarAlerta() {
-                alert('Esta é uma menssagem de alerta!!!');
-        }
-            function mostrarMensagem(mensagem) {
-                alert('Mensagem: ' + mensagem);
-        }
-            function somarValores(valor1,valor2){
-                var soma = valor1 + valor2;
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
 
-                alert('A soma é: '+ soma);
-        }
-            function escreveTexto(){
-                document.getElementById("texto").innerText ="Este é o novo texto escrito pela função";
-        }
-        </script>
-    </head>
-    <body>
-        <h1>JavaScript</h1>
-        <button onclick="mostrarAlerta()">Mostrar Alerta</button>
-        <button onclick="mostrarMensagem('Esta é uma mensagems passada com argumento!')">Mostrar Mensagem com Argumento</button>
-        <button onclick="somarValores(5, 10)">Somar 5 + 10</button>
-        <div id="texto" style="margin-top: 20px; font-weight: bold;"></div>
-        <button onclick="escreveTexto()">Escrever Texto na Página</button>        
-    </body>
-</HTML>
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #texto {
+      margin-top: 20px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Atividade 5 - JavaScript</h1>
+    <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+    <button onclick="mostrarMensagem('Esta é uma mensagem passada com argumento!')">Mostrar Mensagem com Argumento</button>
+    <button onclick="somarValores(5, 10)">Somar 5 + 10</button>
+    <button onclick="escreveTexto()">Escrever Texto na Página</button>
+    <div id="texto"></div>
+  </div>
+
+  <script>
+    function mostrarAlerta() {
+      alert('Esta é uma mensagem de alerta!');
+    }
+
+    function mostrarMensagem(mensagem) {
+      alert('Mensagem: ' + mensagem);
+    }
+
+    function somarValores(valor1, valor2) {
+      const soma = valor1 + valor2;
+      alert('A soma é: ' + soma);
+    }
+
+    function escreveTexto() {
+      document.getElementById("texto").innerText = "Este é o novo texto escrito pela função.";
+    }
+  </script>
+</body>
+</html>
